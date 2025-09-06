@@ -198,7 +198,7 @@ export const InfraPodsStatusTable = ({
           },
           {
             table: 'metrics',
-            field: 'k8s.pod.cpu.utilization - Gauge',
+            field: 'k8s.pod.cpu.usage - Gauge',
             type: 'table',
             aggFn: 'avg',
             where,
@@ -260,7 +260,7 @@ export const InfraPodsStatusTable = ({
           node: row["arrayElement(ResourceAttributes, 'k8s.node.name')"],
           restarts: row['last_value(k8s.container.restarts)'],
           uptime: row['undefined(k8s.pod.uptime)'],
-          cpuAvg: row['avg(k8s.pod.cpu.utilization)'],
+          cpuAvg: row['avg(k8s.pod.cpu.usage)'],
           cpuLimitUtilization: row['avg(k8s.pod.cpu_limit_utilization)'],
           memAvg: row['avg(k8s.pod.memory.usage)'],
           memLimitUtilization: row['avg(k8s.pod.memory_limit_utilization)'],
@@ -451,7 +451,7 @@ const NodesTable = ({
         series: [
           {
             table: 'metrics',
-            field: 'k8s.node.cpu.utilization - Gauge',
+            field: 'k8s.node.cpu.usage - Gauge',
             type: 'table',
             aggFn: 'avg',
             where,
@@ -505,7 +505,7 @@ const NodesTable = ({
     return data.data.map((row: any) => {
       return {
         name: row["arrayElement(ResourceAttributes, 'k8s.node.name')"],
-        cpuAvg: row['avg(k8s.node.cpu.utilization)'],
+        cpuAvg: row['avg(k8s.node.cpu.usage)'],
         memAvg: row['avg(k8s.node.memory.usage)'],
         ready: row['avg(k8s.node.condition_ready)'],
         uptime: row['undefined(k8s.node.uptime)'],
@@ -619,7 +619,7 @@ const NamespacesTable = ({
         series: [
           {
             table: 'metrics',
-            field: 'k8s.pod.cpu.utilization - Gauge',
+            field: 'k8s.pod.cpu.usage - Gauge',
             type: 'table',
             aggFn: 'sum',
             where,
@@ -664,7 +664,7 @@ const NamespacesTable = ({
     return data.data.map((row: any) => {
       return {
         name: row["arrayElement(ResourceAttributes, 'k8s.namespace.name')"],
-        cpuAvg: row['sum(k8s.pod.cpu.utilization)'],
+        cpuAvg: row['sum(k8s.pod.cpu.usage)'],
         memAvg: row['sum(k8s.pod.memory.usage)'],
         phase: row['last_value(k8s.namespace.phase)'],
       };
@@ -954,7 +954,7 @@ function KubernetesDashboardPage() {
                                 where: whereClause,
                                 table: 'metrics',
                                 aggFn: 'avg',
-                                field: 'k8s.pod.cpu.utilization - Gauge',
+                                field: 'k8s.pod.cpu.usage - Gauge',
                                 numberFormat: K8S_CPU_PERCENTAGE_NUMBER_FORMAT,
                               },
                             ],
@@ -1123,7 +1123,7 @@ function KubernetesDashboardPage() {
                                 where: whereClause,
                                 table: 'metrics',
                                 aggFn: 'avg',
-                                field: 'k8s.node.cpu.utilization - Gauge',
+                                field: 'k8s.node.cpu.usage - Gauge',
                                 numberFormat: K8S_CPU_PERCENTAGE_NUMBER_FORMAT,
                               },
                             ],
@@ -1214,7 +1214,7 @@ function KubernetesDashboardPage() {
                                 where: whereClause,
                                 table: 'metrics',
                                 aggFn: 'sum',
-                                field: 'k8s.pod.cpu.utilization - Gauge',
+                                field: 'k8s.pod.cpu.usage - Gauge',
                                 numberFormat: K8S_CPU_PERCENTAGE_NUMBER_FORMAT,
                               },
                             ],

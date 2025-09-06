@@ -394,7 +394,7 @@ export default function NodeDetailsSidePanel({
                               where: metricsWhere,
                               table: 'metrics',
                               aggFn: 'avg',
-                              field: 'k8s.pod.cpu.utilization - Gauge',
+                              field: 'k8s.pod.cpu.usage - Gauge',
                               numberFormat: K8S_CPU_PERCENTAGE_NUMBER_FORMAT,
                             },
                           ],
