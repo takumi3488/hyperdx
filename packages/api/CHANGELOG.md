@@ -1,5 +1,35 @@
 # @hyperdx/api
 
+## 2.3.0
+
+### Minor Changes
+
+- 25f77aa: added team level queryTimeout to ClickHouse client
+
+### Patch Changes
+
+- 8568580: feat: INGESTION_API_KEY allows for environment variable defined api key
+- eb6f3a0: Fix the alert connection query to include the password field.
+- d6f8058: - deprecate unused packages/api/src/clickhouse
+  - deprecate unused route /datasources
+  - introduce getJSNativeCreateClient in common-utils
+  - uninstall @clickhouse/client in api package
+  - uninstall @clickhouse/client + @clickhouse/client-web in app package
+  - bump @clickhouse/client in common-utils package to v1.12.1
+- aacd24d: refactor: decouple clickhouse client into browser.ts and node.ts
+- bb2221a: fix: Keep "created by" field unchanged during alert updates in dashboards
+- aacd24d: bump: default request_timeout to 1hr
+- f800fd1: Fixes alert title used on dashboards with multiple tiles
+- 261d469: feat: limit how many tasks are executing at any time
+- Updated dependencies [25f77aa]
+- Updated dependencies [d6f8058]
+- Updated dependencies [aacd24d]
+- Updated dependencies [52483f6]
+- Updated dependencies [aacd24d]
+- Updated dependencies [3f2d427]
+- Updated dependencies [ecb20c8]
+  - @hyperdx/common-utils@0.4.0
+
 ## 2.2.2
 
 ### Patch Changes
