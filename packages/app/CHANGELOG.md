@@ -1,5 +1,42 @@
 # @hyperdx/app
 
+## 2.3.0
+
+### Minor Changes
+
+- 25f77aa: added team level queryTimeout to ClickHouse client
+- 64eb638: feat: Improve search speed by chunking long time range searches into smaller incremental search windows.
+
+### Patch Changes
+
+- c691e94: Improve the rendering of autocomplete suggestions in a modal context
+- d6f8058: - deprecate unused packages/api/src/clickhouse
+  - deprecate unused route /datasources
+  - introduce getJSNativeCreateClient in common-utils
+  - uninstall @clickhouse/client in api package
+  - uninstall @clickhouse/client + @clickhouse/client-web in app package
+  - bump @clickhouse/client in common-utils package to v1.12.1
+- fb66126: fix: remove play button and time picker from markdown tab
+- 88f3caf: fix: Prevent empty order by set in search page for certain sort/primary keys
+- 784014b: fix: broke out line break icon from HyperJsonMenu
+- 9c4c5f4: feat: support toUnixTimestamp style timestamps in ORDER BY
+- aacd24d: refactor: decouple clickhouse client into browser.ts and node.ts
+- 52483f6: feat: enable filters for json columns
+- aacd24d: bump: default request_timeout to 1hr
+- 5e4047a: feat: add generated SQL modal to the search page
+- 042e359: Resolved overflow issue and enhanced color contrast in nav bar profile section.
+- a714412: Improve live tail logic to not fetch if the page isn't visible.
+- b6787d5: fix: format numbers on dashboards only for the queried column, not groupBy columns
+- ecb20c8: feat: remove useless session source fields
+- Updated dependencies [25f77aa]
+- Updated dependencies [d6f8058]
+- Updated dependencies [aacd24d]
+- Updated dependencies [52483f6]
+- Updated dependencies [aacd24d]
+- Updated dependencies [3f2d427]
+- Updated dependencies [ecb20c8]
+  - @hyperdx/common-utils@0.4.0
+
 ## 2.2.2
 
 ### Patch Changes
